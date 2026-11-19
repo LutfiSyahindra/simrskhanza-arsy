@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="220" pageHeight="165" columnWidth="196" leftMargin="12" rightMargin="12" topMargin="12" bottomMargin="10" uuid="beac71dc-5f9f-4ee0-8775-acfcccbbe648">
+	<property name="ireport.zoom" value="4.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="namars" class="java.lang.String"/>
+	<parameter name="alamatrs" class="java.lang.String"/>
+	<parameter name="kotars" class="java.lang.String"/>
+	<parameter name="propinsirs" class="java.lang.String"/>
+	<parameter name="kontakrs" class="java.lang.String"/>
+	<parameter name="logo" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[select resep_obat.no_resep,resep_obat.tgl_perawatan,resep_obat.jam,pasien.nm_pasien,pasien.tgl_lahir,pasien.no_rkm_medis,databarang.nama_brng,databarang.expire,aturan_pakai.aturan,detail_pemberian_obat.jml,
+kodesatuan.satuan,poliklinik.nm_poli from resep_obat inner join reg_periksa inner join pasien inner join aturan_pakai inner join databarang inner join detail_pemberian_obat inner join kodesatuan on resep_obat.no_rawat=reg_periksa.no_rawat  and reg_periksa.no_rkm_medis=pasien.no_rkm_medis  and databarang.kode_brng=aturan_pakai.kode_brng and detail_pemberian_obat.kode_brng=databarang.kode_brng
+and resep_obat.no_rawat=aturan_pakai.no_rawat and resep_obat.tgl_perawatan=aturan_pakai.tgl_perawatan and
+resep_obat.jam=aturan_pakai.jam
+and resep_obat.no_rawat=detail_pemberian_obat.no_rawat and resep_obat.tgl_perawatan=detail_pemberian_obat.tgl_perawatan and
+resep_obat.jam=detail_pemberian_obat.jam and kodesatuan.kode_sat=databarang.kode_sat and reg_periksa.kd_poli=poliklinik.kd_poli]]>
+	</queryString>
+	<field name="no_resep" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_perawatan" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jam" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="expire" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nm_pasien" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_rkm_medis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_lahir" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_brng" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="aturan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jml" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="satuan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nm_poli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="131" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="0" width="194" height="1" forecolor="#006666" uuid="d6929e28-d5a2-430d-bc64-8e0bdfac840e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="33" width="194" height="1" forecolor="#006666" uuid="530a0439-8a5b-43ed-94d9-3bc619f455e2"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="2" y="44" width="193" height="11" uuid="832cfb81-2ba6-4fa7-a675-82daa3048a91"/>
+				<textElement textAlignment="Center">
+					<font fontName="Agency FB" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No. "+$F{no_resep}+" Tgl. "+$F{tgl_perawatan}+" "+$F{jam}+" Poli. "+$F{nm_poli}]]></textFieldExpression>
+			</textField>
+			<line direction="BottomUp">
+				<reportElement x="0" y="0" width="1" height="131" forecolor="#006666" uuid="3a9850c0-aaa6-41a8-a494-3cde575b120a"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="2" y="66" width="25" height="11" uuid="3001ea83-c8bc-4fba-b430-7962e3db561c"/>
+				<textElement textAlignment="Left">
+					<font fontName="Agency FB" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<line direction="BottomUp">
+				<reportElement x="195" y="0" width="1" height="130" forecolor="#006666" uuid="b675459e-61b4-4832-bbe3-a23a9e94841f"/>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="107" y="55" width="25" height="11" uuid="b29b75c7-3083-42c3-a0ad-b2b67eb0b5f5"/>
+				<textElement textAlignment="Left">
+					<font fontName="Agency FB" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tgl.Lahir]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="26" y="21" width="169" height="11" uuid="2e1744ad-90e9-4e6d-b6d5-9c4933410427"/>
+				<textElement textAlignment="Center">
+					<font fontName="Agency FB" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{kontakrs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="26" y="11" width="169" height="11" uuid="ada6b25b-4cc5-4084-928e-9fbcfd6a3dec"/>
+				<textElement textAlignment="Center">
+					<font fontName="Agency FB" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{alamatrs}+", "+$P{kotars}+", "+$P{propinsirs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="26" y="1" width="169" height="11" uuid="f219ebca-22dc-4842-88e5-595f44f48a1e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Agency FB" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{namars}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="34" width="193" height="11" uuid="e55efa4c-79d2-47b7-bd54-d5460ceb2101"/>
+				<textElement textAlignment="Center">
+					<font fontName="Agency FB" size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[INSTALASI FARMASI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="66" width="4" height="11" uuid="676618cf-fa4f-460f-883f-cd854db44c22"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="132" y="55" width="4" height="11" uuid="27e3f195-8125-4e1b-adf0-6b570bbdc134"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="31" y="66" width="164" height="11" uuid="96ccc4b2-453f-45bf-ac82-73edbe657439"/>
+				<textElement>
+					<font fontName="Agency FB" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nm_pasien}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="55" width="59" height="11" uuid="3c92140b-2c4a-448c-953f-1bf4f1fb1efd"/>
+				<textElement>
+					<font fontName="Agency FB" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tgl_lahir}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="78" width="194" height="1" forecolor="#006666" uuid="9a313b82-3445-4ea3-904a-728037ea19f2"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="2" y="90" width="193" height="29" uuid="134c9fe8-168a-4c24-8f0c-80284defafa5"/>
+				<textElement textAlignment="Center" markup="html">
+					<font fontName="Agency FB" size="11" isBold="true"/>
+					<paragraph lineSpacing="Single">
+						<tabStop position="177" alignment="Left"/>
+					</paragraph>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{aturan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="79" width="141" height="11" uuid="6c8a3a14-5c24-4092-b1a4-f9b012df2747">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Agency FB" size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_brng}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="146" y="79" width="49" height="11" uuid="f87d53b9-b57b-473a-8ae9-6404e5bbb24d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Agency FB" size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jml}+" "+$F{satuan}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="130" width="195" height="1" forecolor="#006666" uuid="78d5c39e-e2e5-48cf-8926-865f039c9a09">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="2" y="119" width="46" height="11" uuid="54ac3d42-376b-42fa-9dbe-e93e7127035f"/>
+				<textElement textAlignment="Left">
+					<font fontName="Agency FB" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tgl. Kadaluarsa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="119" width="4" height="11" uuid="3febf2e8-3628-4001-ab0a-88c15672d3d5"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="52" y="119" width="55" height="11" uuid="c57e001c-bb83-4b06-8df5-aa97d495c80b"/>
+				<textElement textAlignment="Left">
+					<font fontName="Agency FB" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{expire}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="55" width="25" height="11" uuid="b948d75d-0610-4251-bb43-24ca381ed4fd"/>
+				<textElement textAlignment="Left">
+					<font fontName="Agency FB" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[No. RM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="55" width="4" height="11" uuid="37783d0f-aba8-402e-be9b-f219b5d1e1f7"/>
+				<textElement textAlignment="Left">
+					<font fontName="Tahoma" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="31" y="55" width="59" height="11" uuid="904c1868-4372-4e6d-9c6c-97d745c63e29"/>
+				<textElement>
+					<font fontName="Agency FB" size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{no_rkm_medis}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="118" width="194" height="1" forecolor="#006666" uuid="38ab35a2-ce3c-425e-a99f-6427448a05b2"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<image scaleImage="FillFrame" onErrorType="Blank">
+				<reportElement x="1" y="5" width="25" height="25" uuid="53f73555-78a6-419d-9e4d-f1c4d5dffeff"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

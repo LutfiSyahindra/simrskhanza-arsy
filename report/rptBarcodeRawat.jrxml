@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="119" pageHeight="25" columnWidth="115" leftMargin="2" rightMargin="2" topMargin="2" bottomMargin="2" uuid="3c80a3ce-0b0f-4a4b-96e2-d807fd204657">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nama" class="java.lang.String"/>
+	<parameter name="namars" class="java.lang.String"/>
+	<parameter name="alamatrs" class="java.lang.String"/>
+	<parameter name="kotars" class="java.lang.String"/>
+	<parameter name="propinsirs" class="java.lang.String"/>
+	<parameter name="kontakrs" class="java.lang.String"/>
+	<parameter name="alamat" class="java.lang.String"/>
+	<parameter name="norm" class="java.lang.String"/>
+	<parameter name="no_rawat" class="java.lang.String"/>
+	<parameter name="alamat_pj" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select no_rawat from reg_periksa where no_rawat= $P{no_rawat}]]>
+	</queryString>
+	<field name="no_rawat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="1" width="53" height="19" uuid="8d812a2e-3f48-4345-927b-798866775f55">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="1" y="1" width="9" height="3" uuid="ffb4abb3-b0da-486b-98c5-78ffaef7d0c5"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<text><![CDATA[No.RM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="5" width="9" height="3" uuid="3a09b05b-f5db-403c-aad2-feb0933fdc0d"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="9" width="9" height="3" uuid="ab1a8508-ceac-4c37-9767-e0d9615e2b32"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<text><![CDATA[Tgl.Lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="13" width="9" height="3" uuid="01ad0f39-48fd-4850-8d3a-d207f3faa2b6"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="17" width="9" height="3" uuid="4ae9ca03-8c43-4be5-a399-a6158cc0e83c"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<text><![CDATA[No.Rawat]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="11" y="1" width="42" height="3" uuid="8263001d-a779-4756-9560-ee53f9ef98d5"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$P{norm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="11" y="5" width="42" height="3" uuid="d8a07cf3-99aa-4c79-b7c2-05dd572a2ba8"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$P{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="11" y="9" width="42" height="3" uuid="1347357d-2294-4c52-b0aa-016c102b0b2d"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$P{alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="11" y="13" width="42" height="3" uuid="024b193d-2f6e-4825-a3cb-c9ae1117624c"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$P{alamat_pj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="11" y="17" width="42" height="3" uuid="f3170db0-4c95-4d2e-b2c6-a315a21a06d3"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$P{no_rawat}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="62" y="1" width="53" height="19" uuid="150be312-6334-41bf-ac65-ae06eadc1c4a">
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="63" y="1" width="9" height="3" uuid="0e4ad2ec-cc9e-40f0-9df0-c87c1d4e08ad"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<text><![CDATA[No.RM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="63" y="5" width="9" height="3" uuid="6d5037f6-1e70-434e-8eec-e7fe262467e4"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="63" y="9" width="9" height="3" uuid="21ba911b-9320-4657-9d58-2a616d823098"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<text><![CDATA[Tgl.Lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="63" y="13" width="9" height="3" uuid="3a5a5c3e-3492-4827-a714-87c84584b77d"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="63" y="17" width="9" height="3" uuid="286ded85-cec1-4613-ac07-31e813032491"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<text><![CDATA[No.Rawat]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="73" y="1" width="42" height="3" uuid="5f571991-8472-464f-914d-e1c8a6d42ea0"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$P{norm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="5" width="42" height="3" uuid="3f516245-305a-4e87-9643-ac3e36af5ebb"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$P{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="9" width="42" height="3" uuid="5015ce71-ed47-48a5-a284-872f765c40e2"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$P{alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="13" width="42" height="3" uuid="97f80e99-0d34-4c5e-993a-41fd6f6ed4c1"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$P{alamat_pj}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="17" width="42" height="3" uuid="1c9b918d-9640-4a3a-ab06-b61dec5dd6dc"/>
+				<textElement>
+					<font fontName="Tahoma" size="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[": "+$P{no_rawat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

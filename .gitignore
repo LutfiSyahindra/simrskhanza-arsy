@@ -1,0 +1,38 @@
+# Java / NetBeans
+**/build/
+**/dist/
+**/nbproject/private/
+*.class
+
+# IDE
+**/.idea/
+**/.vscode/
+
+# Sistem dan cache
+.DS_Store
+._*
+Thumbs.db
+**/cache/
+*.log
+hs_err_pid*
+replay_pid*
+
+# Konfigurasi lokal dan kredensial
+**/.env
+**/.env.*
+!**/.env.example
+**/setting/database.xml
+**/setting/database.ini
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+
+# Database dumps - tinjau sebelum dipublikasikan
+*.sql
+
+# Backup dan data operasional
+/Backup yang harus dipasang lagi/
+/gambarradiologi/
+/resumepasien/
